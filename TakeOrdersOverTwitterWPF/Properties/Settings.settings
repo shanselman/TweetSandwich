@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TakeOrdersOverTwitterWPF.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TwitterUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">shanselman</Value>
+    </Setting>
+    <Setting Name="OrderString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Order</Value>
+    </Setting>
+    <Setting Name="LastOrder" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ConsumerKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">7N9t29Zazy1wQESTWZLKsA</Value>
+    </Setting>
+    <Setting Name="ConsumerSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2FwppF78AvW7DPVYwB0u4Jz9E8OiwYKdBto624Jk3cc</Value>
+    </Setting>
+    <Setting Name="Token" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Secret" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

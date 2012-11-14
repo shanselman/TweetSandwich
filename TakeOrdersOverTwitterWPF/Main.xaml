@@ -1,0 +1,36 @@
+﻿<Window x:Class="TakeOrdersOverTwitterWPF.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Tweet Sandwich" Height="536" Width="779" Icon="/TakeOrdersOverTwitterWPF;component/App.ico" ResizeMode="CanMinimize" ShowInTaskbar="True" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen"
+    xmlns:local="clr-namespace:TakeOrdersOverTwitterWPF.Properties" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Settings x:Key="settings" />
+    </Window.Resources>
+    <Grid Width="741">
+        <Grid DataContext="{StaticResource settings}" Margin="12,15,304,115">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="14*" />
+                <ColumnDefinition Width="68*" />
+                <ColumnDefinition Width="288*" />
+                <ColumnDefinition Width="56*" />
+            </Grid.ColumnDefinitions>
+            <TextBox Height="23" Margin="28,42,122,0" Name="orderString" VerticalAlignment="Top" Text="{Binding Path=Default.OrderString}" Grid.Column="2" TabIndex="3" />
+            <Label Margin="5,39,0,0" Name="label2" Height="28.04" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110" Grid.ColumnSpan="3">Orders String:</Label>
+            <Label Height="28.04" HorizontalAlignment="Left" Margin="5,70,0,0" Name="lastOrder" VerticalAlignment="Top" Width="110" Grid.ColumnSpan="3">Last Order:</Label>
+            <TextBox Height="23" Margin="28,71,122,0" Name="lastOrderNum" VerticalAlignment="Top" Text="{Binding Path=Default.LastOrder}" Grid.Column="2" TabIndex="4" />
+            <Image Name="birdImage" Stretch="None" Source="/TakeOrdersOverTwitterWPF;component/Resources/BirdAndASandwich.png" SnapsToDevicePixels="True" Margin="16,-7,-24,7" IsHitTestVisible="False" Grid.Column="2" Grid.ColumnSpan="2" />
+        </Grid>
+        <Canvas HorizontalAlignment="Right" Margin="0,54,12,225" Name="orderCanvas" Width="261">
+            <Image Canvas.Left="6" Canvas.Top="6" Height="64" Name="orderAvatar" Stretch="Fill" Width="64" />
+            <Label Canvas.Left="76" Canvas.Top="18" Height="28" Name="orderName" Width="179" FontSize="12" FontWeight="Bold">Name</Label>
+            <Label Canvas.Left="76" Canvas.Top="34" FontSize="12" FontWeight="Bold" Height="28" Name="orderLocation" Width="179">Location</Label>
+            <Label Canvas.Left="76" Canvas.Top="0" FontSize="12" FontWeight="Bold" Height="28" Name="orderTwitterName" Width="179">Twitter Name</Label>
+            <TextBox Canvas.Left="0" IsReadOnly="True" Canvas.Top="74" FontSize="16" FontWeight="Bold" Height="139" Name="orderTweet" Width="255" TextWrapping="WrapWithOverflow">Tweet</TextBox>
+            <Label Canvas.Left="76" Canvas.Top="50" FontSize="12" FontWeight="Bold" Height="28" Name="orderDateTime" Width="179">Date/Time</Label>
+        </Canvas>
+        <Label Height="38" HorizontalAlignment="Right" Margin="0,10,12,0" Name="lastOrderLabel" VerticalAlignment="Top" Width="261" FontSize="18" FontWeight="Bold">Last Tweeted Order</Label>
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,12,147" Name="instructions" TextWrapping="WrapWithOverflow" Width="260" Height="72" VerticalAlignment="Bottom">When I'm running, I'll check your Twitter stream ever 5 minutes. If I see the Order String in a new tweet, I'll print it out to the default printer.<LineBreak />That's all I do.</TextBlock>
+        <TextBlock Height="30" Margin="0,0,18,121" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="256"><Hyperlink NavigateUri="http://www.twitter.com/shanselman">Written poorly by @shanselman</Hyperlink></TextBlock>
+        <ListBox Margin="17,0,12,9" Name="listBox1" Height="107" VerticalAlignment="Bottom" TabIndex="6" />
+    </Grid>
+</Window>

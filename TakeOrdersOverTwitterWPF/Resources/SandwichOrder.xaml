@@ -1,0 +1,14 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:bt="clr-namespace:TakeOrdersOverTwitterWPF.BindableText;assembly=TakeOrdersOverTwitterWPF"
+    FontSize="24" FontFamily="Arial">
+    <Paragraph FontSize="48">Twitter Order</Paragraph>
+    <Paragraph>
+        <bt:BindableRun BoundText="{Binding Path=User.Name}" /> 
+        (<bt:BindableRun BoundText="{Binding Path=User.ScreenName}" />) in
+        <bt:BindableRun BoundText="{Binding Path=User.Location}" /> says on
+        <bt:BindableRun BoundText="{Binding Path=CreatedDate}" /> :
+    </Paragraph>
+    <Paragraph FontFamily="Arial">
+        <bt:BindableRun BoundText="{Binding Text}" />
+    </Paragraph>
+</FlowDocument>
